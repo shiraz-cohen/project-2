@@ -1,16 +1,20 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="header_style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0"> 
+    <link rel="stylesheet" href="login.css"> 
+    <link rel="stylesheet" href="header_style.css"> 
 </head>
-        
+
 <body>
     <header>
         <nav id="navigation_login">
             <a href="login.html" class="button_login">כניסת משתמשים</a>
             <a href="#contact" class="button_login">להצטרפות</a>
         </nav>
- 
+    
         <nav id="navigation">
             <a href="products_1.html" class="button">משחקי זיכרון</a>
             <a href="products_2.html" class="button">משחקי מהירות</a>
@@ -19,12 +23,28 @@
             <a href="products_3.html" class="button">משחקי מחשבה</a>
             <a href="my_basket.html" class="button">משחקי ספורט</a>
             <a href="products_2.html" class="button">משחקים לימודיים</a>
-
+    
         </nav>        
     </header>
 
-    <div>
-        <p>משחקים מאתגרים וחינוכיים לכל גיל, שיעבירו לכם את הזמן בכיף. נראה אתכם מנצחים!</p>
-    </div>
 
-</body>    
+
+
+
+<div class="Contact-Us">
+    <h1>כניסת משתמש</h1>
+
+<form class="contact" method="post" action="home.html" autocomplete="on" >
+          
+    <input id="name" type="text" name="fname" placeholder="שם משתמש" required>
+    <br/>
+    
+    <input id="password" type="password" name="password" placeholder="סיסמא" required>
+    <br/>
+  
+    <input  id="submit" type="submit" value="שלח" >
+   
+  </form>
+</div>
+
+</body>
