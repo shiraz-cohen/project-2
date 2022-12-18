@@ -1,6 +1,7 @@
 body{
     direction: rtl;
     background-color:rgb(224, 245, 245);
+    position: static;
   }
 
   img{
@@ -9,13 +10,18 @@ body{
     margin-left: auto;
   }
 
-  #navigation_login{
-    z-index: 1;
+  header{
     position: relative;
-    float: left;
+  }
+
+  #navigation_login{
+    z-index: 2;
+    position: relative;
+    float: left; 
     width: auto;
     height: auto;
-    margin-top: 0px;
+    margin-top: 5px;
+    margin-left: 20px;
 }
 
 header .button_login{
@@ -23,24 +29,32 @@ header .button_login{
     font-size: 13px;
     font-family:Arial, sans-serif;
     text-align:center;
-    padding:10px;
+    padding:8px;
     color:rgb(193, 226, 226);
     background-color:rgb(45, 138, 125);
     text-decoration:none;
     display:block;
     border: solid 2px rgb(193, 226, 226);
     height: 20px;
-    margin: auto;
     border-radius: 6px;
     transition-duration: 0.4s;
   }
 
-  #navigation {
-    z-index: 2;
-    position: relative;
+  header .button_login:hover {
+    font-style:inherit;
+    font-weight: 500;
+    font-size: 13.5px;
+    color: #000000;
+    background-color:rgb(54, 184, 166);
     width: auto;
+  }
+
+  #navigation {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
     height: auto;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 0px;
     display: flex;
 }
@@ -71,6 +85,19 @@ header .button{
     width: 150px;
   }
 
+  p{
+    position: absolute;
+    margin-top: 250px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    right:310px;
+    font-size: 25px;
+  }
+
+
+  
   @media screen and (max-width: 1100px){
     header h1{
       font-size:1.5cm;
