@@ -1,0 +1,39 @@
+
+th{
+    font-size: 45px;
+    color: rgb(110, 52, 119);
+}
+
+td{
+    font-size: 40px;
+}
+
+table{
+    margin: 250px auto 50px auto;
+    position: absolute;
+    width: max-content;
+}
+
+table, th, td {
+    border: solid 2px  rgb(52, 92, 92);;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding:12px;
+    vertical-align:middle;
+}
+
+tfoot{
+    color: rgb(110, 52, 119);
+}
+
+#button_continue{
+    font-size: 40px;
+    margin: 15px auto 25px auto;
+    display: block;
+    width: 100px;
+    background-color:  rgb(193, 226, 226);
+    border: 4px solid rgb(52, 92, 92);
+    color: rgb(52, 92, 92);
+    text-align: center;
+    text-decoration: none;
+}
