@@ -1,20 +1,95 @@
-
-  *{
-    font-family:system-ui
-  
-   }
-   .game-item .hide {
-    width: 300px;
-    height: 210px;
-    border: 3px solid;
-    border-color: rgb(7, 5, 5);
-    background-color: brown;
-  }
-
-.img{
-    visibility: hidden;
+* {
+  font-family: system-ui
 }
 
-div{
-    background-color: black;
+.game_cards {
+  width: auto;
+  height: auto;
+  margin: 260px 70px 100px 70px;
+  position: absolute;
+  padding: 60px 30px 60px 30px;
+  border: 3px solid black;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.game_cards img {
+  width: 150px;
+  height: 90px;
+  border: 3px solid;
+  border-color: rgb(7, 5, 5);
+  margin: 15px;
+  align-items: center;
+}
+
+.images_background {
+  position: relative;
+  float: right;
+}
+
+#back-pic1 {
+  position: absolute;
+  float: right;
+}
+
+#back-pic2 {
+  position: absolute;
+  float: right;
+  right: 216px;
+}
+
+#back-pic3 {
+  position: relative;
+  float: right;
+  right: 402px;
+}
+
+#back-pic4 {
+  position: absolute;
+  float: right;
+  right: 216px;
+}
+
+#back-pic5 {
+  position: absolute;
+  float: right;
+  right: 774px;
+}
+
+#back-pic6 {
+  position: absolute;
+  float: right;
+  right: 960px;
+}
+
+#back-pic3 {
+  position: absolute;
+  float: right;
+  right: 216px;
+}
+
+#back-pic4 {
+  position: absolute;
+  float: right;
+  right: 648px;
+}
+
+#back-pic5 {
+  position: absolute;
+  float: right;
+  right: 864px;
+}
+
+#back-pic6 {
+  position: absolute;
+  float: right;
+  right: 1080px;
+}
+
+#back-pic7 {
+  position: absolute;
+  float: right;
 }

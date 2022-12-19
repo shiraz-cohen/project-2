@@ -1,15 +1,25 @@
 
-var img1 = document.getElementById("img1");
-var img2 = document.getElementById("img2");
+var back1 = document.getElementById("back1");
+var back2 = document.getElementById("back2");
+var back3 = document.getElementById("back3");
+var back4 = document.getElementById("back4");
+var back5 = document.getElementById("back5");
 
-img1.addEventListener("click", picLink);
+back1.addEventListener("click", picLink);
+back2.addEventListener("click", picLink);
+back3.addEventListener("click", picLink);
+back4.addEventListener("click", picLink);
+back5.addEventListener("click", picLink);
+
 
 function picLink() {
-    if (img1.className === "hide") {
-        img1.className = "img";
+    var picId = this.attributes["data-img"].value;
+    var pic = document.getElementById(picId);
+
+    if (pic.className === "hide") {
+        pic.className = "";
     }
     else {
-        img1.className = "hide"
+        pic.className = "hide"
     }
-
 }
