@@ -1,0 +1,40 @@
+.games1{
+    padding: 40px;
+    margin-top: 300px;
+    margin-right: 100px;
+    margin-left: 100px;
+    position: absolute;
+    
+}
+.game{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.game-item{
+    margin: 50px;
+}
+.game-item .img {
+    width: 250px;
+    height: 250px; 
+    border: 2px solid;
+    border-color: rgb(7, 5, 5);
+    border-width: 3px;
+    border-style: solid;
+    display: inline-block;
+    border-radius: 4px;
+  }
+  .img{
+    
+    border-color: rgb(7, 5, 5);
+    border-width: 3px;
+    border-style: solid;
+    display: inline-block;
+    transition-timing-function: linear;
+    transition-duration: 0.4s;
+  }
+  .img:hover {
+    width: 260px;
+    height: 260px; 
+  }
