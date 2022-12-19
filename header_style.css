@@ -1,4 +1,8 @@
-body{
+*{
+  font-family:system-ui
+
+ }
+ body{
     direction: rtl;
     background-color:rgb(224, 245, 245);
     position: static;
