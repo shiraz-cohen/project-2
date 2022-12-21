@@ -3,7 +3,7 @@
 }
 
 .game_cards {
-  width: auto;
+  width: 1146px;
   height: auto;
   margin: 260px 70px 100px 70px;
   position: absolute;
@@ -30,66 +30,85 @@
   float: right;
 }
 
-#back-pic1 {
+.div_img{
   position: absolute;
   float: right;
 }
 
-#back-pic2 {
-  position: absolute;
-  float: right;
+#div2 {
   right: 216px;
 }
 
-#back-pic3 {
-  position: relative;
-  float: right;
+#div3 {
   right: 402px;
 }
 
-#back-pic4 {
-  position: absolute;
-  float: right;
-  right: 216px;
+#div4 {
+  right: 588px;
 }
 
-#back-pic5 {
-  position: absolute;
-  float: right;
+#div5 {
   right: 774px;
 }
 
-#back-pic6 {
-  position: absolute;
-  float: right;
+#div6 {
   right: 960px;
 }
 
-#back-pic3 {
-  position: absolute;
-  float: right;
+#div7 {
+  top: 186px;
+}
+
+#div8 {
+  top: 186px;
   right: 216px;
 }
 
-#back-pic4 {
-  position: absolute;
-  float: right;
-  right: 648px;
+#div9 {
+  top: 186px;
+  right: 402px;
 }
 
-#back-pic5 {
-  position: absolute;
-  float: right;
-  right: 864px;
+#div10 {
+  top: 186px;
+  right: 588px;
 }
 
-#back-pic6 {
-  position: absolute;
-  float: right;
-  right: 1080px;
+#div11 {
+  top: 186px;
+  right: 774px;
 }
 
-#back-pic7 {
-  position: absolute;
-  float: right;
+#div12 {
+  top: 186px;
+  right: 960px;
+}
+
+#div13 {
+  top: 312px;
+}
+
+#div14 {
+  top: 312px;
+  right: 216px;
+}
+
+#div15 {
+  top: 312px;
+  right: 402px;
+}
+
+#div16 {
+  top: 312px;
+  right: 588px;
+}
+
+#div17 {
+  top: 312px;
+  right: 774px;
+}
+
+#div18 {
+  top: 312px;
+  right: 960px;
 }
