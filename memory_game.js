@@ -37,12 +37,42 @@ back16.addEventListener("click", picLink);
 back17.addEventListener("click", picLink);
 back18.addEventListener("click", picLink);
 
-function picLink() {
+var count =0;
+var picId1;
+var pic1;
+
+
+function picLink( ) {
+    
     var picId = this.attributes["data-img"].value;
+    console.log(picId);
     var pic = document.getElementById(picId);
+    console.log(pic.src);
+    
 
     if (pic.className === "hide") {
         pic.className = "";
+        count+=1;
+        console.log(count);
+        if(count==2){
+            pic1 = document.getElementById(picId1);
+            console.log(pic1.src);
+            
+           
+            if(pic1.id=="back-pic1" && pic.id=="back-pic2"){
+                pic.className="hide";
+                pic1.className="hide";
+                count=0;
+            }
+
+        }
+        else{
+            picId1 = this.attributes["data-img"].value;
+            console.log(picId1);
+        
+           
+           
+        }
     }
     else {
         pic.className = "hide"
