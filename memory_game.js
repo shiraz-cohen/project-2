@@ -40,6 +40,7 @@ back18.addEventListener("click", picLink);
 var count = 0;
 var picId1;
 var pic1;
+var score = 0;
 
 function sleep(ms) {
     return new Promise((resolve, reject) => {
@@ -62,6 +63,15 @@ async function picLink() {
                 pic.className = "hide";
                 pic1.className = "hide";
                 count = 0;
+                score+=1;
+                console.log(score);
+
+            }else{
+                await sleep(650);
+                pic.className = "hide";
+                pic1.className = "hide";
+                count = 0;
+
             }
         }
         else {
