@@ -41,44 +41,100 @@ var count = 0;
 var picId1;
 var pic1;
 var score = 0;
+var pic_backId1 = this.attributes.id.value;
+var pic_back1 = document.getElementsByName(pic_backId1);
+var element = document.getElementById("score");
 
 function sleep(ms) {
     return new Promise((resolve, reject) => {
-      setTimeout(resolve, ms);
+        setTimeout(resolve, ms);
     });
-  }
+}
 
 async function picLink() {
 
     var picId = this.attributes["data-img"].value;
     var pic = document.getElementById(picId);
+    var pic_backId = this.attributes.id.value;
+    var pic_back = document.getElementsByName(pic_backId);
+    document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
 
     if (pic.className === "hide") {
         pic.className = "";
         count += 1;
         if (count == 2) {
             pic1 = document.getElementById(picId1);
+            pic_back1 = document.getElementsByName(pic_backId1);
+            console.log(pic_back1)
+
             if (pic1.src === pic.src) {
-                await sleep(1000);
+                await sleep(650);
                 pic.className = "hide";
                 pic1.className = "hide";
+                pic_back[0].className = "hide_back";
+                pic_back1[0].className = "hide_back";
                 count = 0;
-                score+=1;
-                console.log(score);
+                score += 1;
+                document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
 
-            }else{
+            } else {
                 await sleep(650);
                 pic.className = "hide";
                 pic1.className = "hide";
                 count = 0;
-
             }
         }
         else {
             picId1 = this.attributes["data-img"].value;
+            pic_backId1 = this.attributes.id.value;
         }
     }
     else {
         pic.className = "hide"
     }
 }
+
+/*
+function clockBlock() {
+    var timeNow=new Date();
+     var hrs=timeNow.getHours();
+     var min=timeNow.getMinutes();
+     var sec=timeNow.getSeconds();
+     var amPm="AM";
+     if (hrs==0) {
+            hrs=12;
+     }
+     if (hrs>12) {
+             amPm="PM";
+             hrs=hrs-12;
+     }
+
+     if (hrs<10) {
+             hrs="0"+hrs;
+     }
+
+     if (min<10) {
+             min="0"+min;
+     }
+
+     if (sec<10) {
+             sec="0"+sec;
+     }
+
+    var printClock=document.getElementById('clockDisplay');
+    printClock.textContent=hrs+":"+min+":"+sec+" "+amPm;
+    printClock.innerText=/*hrs+":"+min+ ":"+":"+sec+" ";
+     setTimeout('clockBlock()',1000);
+} */
+
+var sec=0;
+function clockBlock() {
+        sec=sec+1;
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+    var printClock = document.getElementById('clockDisplay');
+    printClock.textContent = /*hrs + ":" + min + ":" + */sec;
+    printClock.innerText =/*hrs+":"+min+":"+*/sec + " ";
+    setTimeout('clockBlock()', 1000);
+} 

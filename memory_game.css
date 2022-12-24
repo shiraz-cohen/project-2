@@ -2,6 +2,28 @@
   font-family: system-ui
 }
 
+.clockDesign{
+  background-color: black;
+  font-size: 18px;
+  color: #0BF622;
+  border: 5px inset #597572;
+  height: auto;
+  width: 150px;
+  padding: 0px auto;
+  text-align: center;
+  font-family: Impact, Arial, sans-serif;
+  letter-spacing: 3px;
+
+}
+
+#score {
+  font-size: 25px;
+  margin-top: 220px;
+  left: 50px;
+  float: left;
+  font-weight: bold;
+}
+
 .game_cards {
   width: 1146px;
   height: auto;
@@ -14,6 +36,12 @@
 
 .hide {
   display: none;
+}
+
+.hide_back {
+  visibility: hidden;
+  position: relative;
+  float: right;
 }
 
 .game_cards img {
@@ -30,7 +58,7 @@
   float: right;
 }
 
-.div_img{
+.div_img {
   position: absolute;
   float: right;
 }
