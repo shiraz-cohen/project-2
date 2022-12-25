@@ -15,7 +15,11 @@
   letter-spacing: 3px;
 
 }
-
+#clock{
+  margin-top: 220px;
+  position:absolute;
+  right: 100px;
+}
 #score {
   font-size: 25px;
   margin-top: 220px;
