@@ -41,9 +41,10 @@ var count = 0;
 var picId1;
 var pic1;
 var score = 0;
+var time;
 var pic_backId1 = this.attributes.id.value;
 var pic_back1 = document.getElementsByName(pic_backId1);
-var element = document.getElementById("score");
+var userName=localStorage.getItem("userName");
 
 function sleep(ms) {
     return new Promise((resolve, reject) => {
@@ -58,7 +59,6 @@ async function picLink() {
     var pic_backId = this.attributes.id.value;
     var pic_back = document.getElementsByName(pic_backId);
     document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
-
     if (pic.className === "hide") {
         pic.className = "";
         count += 1;
@@ -76,7 +76,12 @@ async function picLink() {
                 count = 0;
                 score += 1;
                 document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
-
+                if (score == 9) {
+                    document.getElementById("game_cards").className = "end_game";
+                    document.getElementById("end").className = "end_";
+                    time = stopCount()
+                    localStorage.setItem(userName+"Time", time);
+                }
             } else {
                 await sleep(650);
                 pic.className = "hide";
@@ -93,3 +98,5 @@ async function picLink() {
         pic.className = "hide"
     }
 }
+
+

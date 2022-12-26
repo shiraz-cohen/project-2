@@ -53,18 +53,22 @@
     </div>
 
     <script>
+        let i=0;
+
         function validateForm() {
           let x = document.forms["myForm"]["fname"].value;
+          i++
+          localStorage.setItem('userName'+i, x);
           if (x == "") {
             alert("Name must be filled out");
             return false;
           }
-            
         }
         function myFunction() {
             let x = document.forms["myForm"]["password1"].value;
             let y = document.forms["myForm"]["password2"].value;
             if (x!="" && y!="" && x===y) {
+                localStorage.setItem('userNamePass'+i, x);
                 text = "סיסמא אושרה";
             } else {
                 text = "סיסמא לא אושרה";
