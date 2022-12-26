@@ -27,24 +27,53 @@
         </nav>
     </header>
 
+   
+
 
     <div class="Contact-Us">
         <h1>משתמש חדש</h1>
 
-        <form class="Contact" method="post" action="home.html" autocomplete="on">
+        <form class="Contact" name="myForm" method="post"  onsubmit="return validateForm()"   autocomplete="on">
+            
 
             <input id="name" type="text" name="fname" placeholder="שם מלא" required>
             <br />
+            
+            <input id="password1" type="password" name="password1" placeholder="סיסמא" required>
+            <br />
+            <input id="password2" type="password" name="password2" placeholder="אימות סיסמא" required>
+            <br />
 
-            <input id="password" type="password" name="password" placeholder="סיסמא" required>
+            <button id="submit" type="submit" onclick="myFunction()">הרשמה</button>
             <br />
-            <input id="password" type="password" name="password" placeholder="אימות סיסמא" required>
-            <br />
-
-            <input id="submit" type="submit" value="הרשמה">
-            <br />
+            <p id="demo"></p>
             <a href="login.html">יש לי חשבון,אני רוצה להתחבר</a>
 
         </form>
     </div>
+
+    <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["fname"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+            
+        }
+        function myFunction() {
+            let x = document.forms["myForm"]["password1"].value;
+            let y = document.forms["myForm"]["password2"].value;
+            if (x!="" && y!="" && x===y) {
+                text = "סיסמא אושרה";
+            } else {
+                text = "סיסמא לא אושרה";
+                alert("שגיאה באימות סיסמא ");
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+
+
+        
+        </script>
 </body>
