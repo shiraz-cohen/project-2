@@ -10,8 +10,11 @@
 <body>
     <header>
         <nav id="navigation_login">
-            <a href="login.html" class="button_login">כניסת משתמשים</a>
-            <a href="joining.html" class="button_login">להצטרפות</a>
+            <a id="logIn" href="login.html" class="hide">כניסת משתמשים</a>
+            <a id="logIn" href="joining.html" class="hide">להצטרפות</a>
+            <p id="user">שלום</p>
+            <a id="logOut" onclick="logOut()" href="home.html" class="button_logOut">התנתק</a>
+
         </nav>
 
         <nav id="navigation">
@@ -23,6 +26,19 @@
             <a href="sport.html" class="button">משחקי ספורט</a>
             <a href="young.html" class="button">משחקים לצעירים</a>
         </nav>
+
+        <script>
+            function logOut() {
+                document.getElementById("logOut").className = "hide";
+                document.getElementById("logIn").className = "hide";
+                localStorage.removeItem("userNow");
+            }
+
+         /*   function logIn{
+                document.getElementById("user").innerHTML = " שלום " + localStorage.getItem("userNow");
+            }*/
+        </script>
+
     </header>
 
     <div>

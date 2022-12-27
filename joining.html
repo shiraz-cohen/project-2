@@ -62,16 +62,21 @@
 
         function myFunction() {
             let p1 = document.forms["myForm"]["password1"].value;
-            console.log(p1);
             let p2 = document.forms["myForm"]["password2"].value;
             let name = document.forms["myForm"]["fname"].value;
-            /*  yourDataSetName = localStorage.getItem("yourDatSetName") ?? [];
-              if (yourDataSetNamer.find(i => i.username === name))
-                  alert("שם משתמש קיים. בחר שם משתמש אחר ");*/
+
+            var _user = JSON.parse(localStorage.getItem(name));
+            if (_user != null) {
+                alert("שם משתמש כבר קיים. בחר שם אחר");
+            }
+
             if (p1.length < 6 /*&& p1*/) {
                 alert("סיסמא צריכה להיות באורך 6 תווים לפחות");
             }
             if (p1 != "" && p2 != "" && p1 === p2) {
+                localStorage.clear();
+                localStorage.setItem("userNow", name);
+
                 localStorage.setItem(name, JSON.stringify(user));
                 var u = JSON.parse(localStorage.getItem(name));
                 u.userName = name;

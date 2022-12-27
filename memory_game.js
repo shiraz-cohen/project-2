@@ -59,6 +59,12 @@ async function picLink() {
     var pic_backId = this.attributes.id.value;
     var pic_back = document.getElementsByName(pic_backId);
     document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
+
+    var userNowname=localStorage.getItem("userNow");
+    var u = JSON.parse(localStorage.getItem(userNowname));
+    u.memoryScore=score;
+    localStorage.setItem(userNowname, JSON.stringify(u));
+
     if (pic.className === "hide") {
         pic.className = "";
         count += 1;
@@ -80,7 +86,12 @@ async function picLink() {
                     document.getElementById("game_cards").className = "end_game";
                     document.getElementById("end").className = "end_";
                     time = stopCount()
-                    localStorage.setItem(userName+"Time", time);
+
+                    var userNowname=localStorage.getItem("userNow");
+                    var u = JSON.parse(localStorage.getItem(userNowname));
+                    u.memoryTime=time;
+                    u.memoryScore=score;
+                    localStorage.setItem(userNowname, JSON.stringify(u));
                 }
             } else {
                 await sleep(650);
