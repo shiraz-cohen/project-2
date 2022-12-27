@@ -31,6 +31,7 @@
 
 
 
+
 <div class="Contact-Us">
     <h1>כניסת משתמש</h1>
 
@@ -39,14 +40,49 @@
     <input id="name" type="text" name="fname" placeholder="שם משתמש" required>
     <br/>
     
-    <input id="password" type="password" name="password" placeholder="סיסמא" required>
+    <input id="password" type="password" name="password1" placeholder="סיסמא" required>
     <br/>
   
-    <input  id="submit" type="submit" value="התחבר" >
+    <button  id="submit"  type="submit" onclick="check()">התחבר</button>
     <br/>
     <a href="joining.html">אין לי חשבון,אני רוצה להירשם</a>
    
   </form>
 </div>
+
+<script>
+    function check() {
+            let p= document.forms["myForm"]["password1"].value;
+            console.log(p);
+            let name = document.forms["myForm"]["fname"].value;
+            
+            /*  yourDataSetName = localStorage.getItem("yourDatSetName") ?? [];
+              if (yourDataSetNamer.find(i => i.username === name))
+                  alert("שם משתמש קיים. בחר שם משתמש אחר ");*/
+            
+            var user = JSON.parse(localStorage.getItem(name));
+            console.log(user.userName);
+            if (name!=user.userName && name!=null) {
+                alert("שם משתמש לא קיים במערכת.אנא הירשם");
+            }
+            var count=0;
+            for(var i=0; i<3; i++){
+                if (p!=user.password) {
+                alert("סיסמא שגויה. אנא נסה שוב");
+                count+=1;
+            }
+            if(count==3){
+                alert("סיסמא שגויה אנא המתן 30 שניות");
+                document.getElementById("submit").nodeType="button";
+            }
+        }
+
+
+               
+
+            
+        }
+
+</script>
 
 </body>

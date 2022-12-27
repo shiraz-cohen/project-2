@@ -1,161 +1,141 @@
 <!DOCTYPE html>
 
 <head>
-        <link rel="stylesheet" href="memory_game.css">
-        <link rel="stylesheet" href="header_style.css">
+    <link rel="stylesheet" href="memory_game.css">
+    <link rel="stylesheet" href="header_style.css">
 </head>
 
 <body onload="startCount()">
-        <header>
-                <nav id="navigation_login">
-                        <a href="login.html" class="button_login">כניסת משתמשים</a>
-                        <a href="joining.html" class="button_login">להצטרפות</a>
-                </nav>
+    <header>
+        <nav id="navigation_login">
+            <a href="login.html" class="button_login">כניסת משתמשים</a>
+            <a href="joining.html" class="button_login">להצטרפות</a>
+        </nav>
 
-                <nav id="navigation">
-                        <a href="memory.html" class="button">משחקי זיכרון</a>
-                        <a href="speed.html" class="button">משחקי מהירות</a>
-                        <a href="edoucation.html" class="button">משחקים לימודיים</a>
-                        <a href="home.html"><img class="logo" src="image.\img-logo.png"></a>
-                        <a href="mind.html" class="button">משחקי חשיבה</a>
-                        <a href="sport.html" class="button">משחקי ספורט</a>
-                        <a href="young.html" class="button">משחקים לצעירים</a>
-                </nav>
-        </header>
-        <div id="clock">
-                <input class="clockDesign" type="text" id="demo">
-                <button id="button_clock" onclick="stop_startCount()">השהה</button>
-                <p id="user">שלום</p>
-        </div>
+        <nav id="navigation">
+            <a href="memory.html" class="button">משחקי זיכרון</a>
+            <a href="speed.html" class="button">משחקי מהירות</a>
+            <a href="edoucation.html" class="button">משחקים לימודיים</a>
+            <a href="home.html"><img class="logo" src="image.\img-logo.png"></a>
+            <a href="mind.html" class="button">משחקי חשיבה</a>
+            <a href="sport.html" class="button">משחקי ספורט</a>
+            <a href="young.html" class="button">משחקים לצעירים</a>
+        </nav>
+    </header>
+    <div id="clock">
+        <button onclick="stopCount()">השהה</button>
+        <input class="clockDesign" type="text" id="demo">
+        <button onclick="startCount()">המשך</button>
+    </div>
+    <script>
+        let sec = 0;
+        let min = 0;
+        let timeout;
+        let timer_on = 0;
 
-        <script>
+        function timedCount() {
+            document.getElementById("demo").value = min + ":" + sec;
+            sec++;
+            if(sec>59){
+                sec=sec-60;
+                min++;
+            }
+            if(sec<10){
+                sec= "0" + sec;
+            }
+         
+            timeout = setTimeout(timedCount, 1000);
+        }
 
-                let sec = 0;
-                let min = 0;
-                let timeout;
-                let timer_on = 0;
-                function stop_startCount() {
-                        if (!timer_on) {
-                                timer_on = 1;
-                                document.getElementById("button_clock").innerHTML = "השהה";
-                                timedCount();
-                        }
-                        else {
-                                clearTimeout(timeout);
-                                timer_on = 0;
-                                document.getElementById("button_clock").innerHTML = "המשך";
-                                return timeout;
-                        }
-                }
-                function timedCount() {
-                        document.getElementById("demo").value = min + ":" + sec;
-                        sec++;
-                        if (sec > 59) {
-                                sec = sec - 60;
-                                min++;
-                        }
-                        if (sec < 10) {
-                                sec = "0" + sec;
-                        }
-                        timeout = setTimeout(timedCount, 1000);
-                        console.log(sec + "  " + timeout);
-                }
+        function startCount() {
+            if (!timer_on) {
+                timer_on = 1;
+                timedCount();
+            }
+        }
 
-                function startCount() {
-                        document.getElementById("user").innerHTML =" שלום "+localStorage.getItem("userName1");
-                        if (!timer_on) {
-                                timer_on = 1;
-                                timedCount();
-                        }
-                }
+        function stopCount() {
+            clearTimeout(timeout);
+            timer_on = 0;
+        }
+    </script>
 
-                function stopCount() {
-                        clearTimeout(timeout);
-                        timer_on = 0;
-                        return timeout;
-                }
-        </script>
+    <a id="score"><strong>הניקוד שצברת: 0</strong></a>
 
-        <a id="score"><strong>הניקוד שצברת: 0</strong></a>
+    <div class="game_cards">
+        <a data-img="back-pic1" id="back1" href="#"><img name="back1" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div1"><img class="hide" id="back-pic1" src="image/fish2.jpg"></div>
 
-        <div id="game_cards" class="game_cards">
-                <p id="end" class="hide">כל הכבוד!
-                        <br>
-                        הניקוד שצברת: 9 נקודות!
-                </p>
-                <a data-img="back-pic1" id="back1" href="#body"><img name="back1" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div1"><img class="hide" id="back-pic1" src="image/fish2.jpg"></div>
+        <a data-img="back-pic2" id="back2" href="#"><img name="back2" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div2"><img class="hide" id="back-pic2" src="image/dog.jpg"></div>
 
-                <a data-img="back-pic2" id="back2" href="#body"><img name="back2" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div2"><img class="hide" id="back-pic2" src="image/dog.jpg"></div>
+        <a data-img="back-pic3" id="back3" href="#"><img name="back3" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div3"><img class="hide" id="back-pic3" src="image/cow.jpg"></div>
 
-                <a data-img="back-pic3" id="back3" href="#body"><img name="back3" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div3"><img class="hide" id="back-pic3" src="image/cow.jpg"></div>
+        <a data-img="back-pic4" id="back4" href="#"><img name="back4" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div4"><img class="hide" id="back-pic4" src="image/lion.jpg"></div>
 
-                <a data-img="back-pic4" id="back4" href="#body"><img name="back4" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div4"><img class="hide" id="back-pic4" src="image/lion.jpg"></div>
+        <a data-img="back-pic5" id="back5" href="#"><img name="back5" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div5"><img class="hide" id="back-pic5" src="image/tiger.jpg"></div>
 
-                <a data-img="back-pic5" id="back5" href="#body"><img name="back5" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div5"><img class="hide" id="back-pic5" src="image/tiger.jpg"></div>
+        <a data-img="back-pic6" id="back6" href="#"><img name="back6" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div6"><img class="hide" id="back-pic6" src="image/dog.jpg"></div>
 
-                <a data-img="back-pic6" id="back6" href="#body"><img name="back6" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div6"><img class="hide" id="back-pic6" src="image/dog.jpg"></div>
+        <a data-img="back-pic7" id="back7" href="#"><img name="back7" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div7"><img class="hide" id="back-pic7" src="image/chik.jpg"></div>
 
-                <a data-img="back-pic7" id="back7" href="#body"><img name="back7" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div7"><img class="hide" id="back-pic7" src="image/chik.jpg"></div>
+        <a data-img="back-pic8" id="back8" href="#"><img name="back8" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div8"><img class="hide" id="back-pic8" src="image/lion.jpg"></div>
 
-                <a data-img="back-pic8" id="back8" href="#body"><img name="back8" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div8"><img class="hide" id="back-pic8" src="image/lion.jpg"></div>
+        <a data-img="back-pic9" id="back9" href="#"><img name="back9" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div9"><img class="hide" id="back-pic9" src="image/hen.png"></div>
 
-                <a data-img="back-pic9" id="back9" href="#body"><img name="back9" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div9"><img class="hide" id="back-pic9" src="image/hen.png"></div>
+        <a data-img="back-pic10" id="back10" href="#"><img name="back10" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div10"><img class="hide" id="back-pic10" src="image/horse.jpg"></div>
 
-                <a data-img="back-pic10" id="back10" href="#body"><img name="back10" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div10"><img class="hide" id="back-pic10" src="image/horse.jpg"></div>
+        <a data-img="back-pic11" id="back11" href="#"><img name="back11" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div11"><img class="hide" id="back-pic11" src="image/horse.jpg"></div>
 
-                <a data-img="back-pic11" id="back11" href="#body"><img name="back11" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div11"><img class="hide" id="back-pic11" src="image/horse.jpg"></div>
+        <a data-img="back-pic12" id="back12" href="#"><img name="back12" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div12"><img class="hide" id="back-pic12" src="image/fish2.jpg"></div>
 
-                <a data-img="back-pic12" id="back12" href="#body"><img name="back12" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div12"><img class="hide" id="back-pic12" src="image/fish2.jpg"></div>
+        <a data-img="back-pic13" id="back13" href="#"><img name="back13" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div13"><img class="hide" id="back-pic13" src="image/sheep.jpg"></div>
 
-                <a data-img="back-pic13" id="back13" href="#body"><img name="back13" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div13"><img class="hide" id="back-pic13" src="image/sheep.jpg"></div>
+        <a data-img="back-pic14" id="back14" href="#"><img name="back14" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div14"><img class="hide" id="back-pic14" src="image/tiger.jpg"></div>
 
-                <a data-img="back-pic14" id="back14" href="#body"><img name="back14" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div14"><img class="hide" id="back-pic14" src="image/tiger.jpg"></div>
+        <a data-img="back-pic15" id="back15" href="#"><img name="back15" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div15"><img class="hide" id="back-pic15" src="image/hen.png"></div>
 
-                <a data-img="back-pic15" id="back15" href="#body"><img name="back15" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div15"><img class="hide" id="back-pic15" src="image/hen.png"></div>
+        <a data-img="back-pic16" id="back16" href="#"><img name="back16" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div16"><img class="hide" id="back-pic16" src="image/cow.jpg"></div>
 
-                <a data-img="back-pic16" id="back16" href="#body"><img name="back16" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div16"><img class="hide" id="back-pic16" src="image/cow.jpg"></div>
+        <a data-img="back-pic17" id="back17" href="#"><img name="back17" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div17"><img class="hide" id="back-pic17" src="image/sheep.jpg"></div>
 
-                <a data-img="back-pic17" id="back17" href="#body"><img name="back17" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div17"><img class="hide" id="back-pic17" src="image/sheep.jpg"></div>
+        <a data-img="back-pic18" id="back18" href="#"><img name="back18" class="images_background"
+                src="image/memory.jpg"></a>
+        <div class="div_img" id="div18"><img class="hide" id="back-pic18" src="image/chik.jpg"></div>
+    </div>
 
-                <a data-img="back-pic18" id="back18" href="#body"><img name="back18" class="images_background"
-                                src="image/memory.jpg"></a>
-                <div class="div_img" id="div18"><img class="hide" id="back-pic18" src="image/chik.jpg"></div>
-        </div>
-
-        <script type="text/javascript" defer src="memory_game.js"></script>
+    <script src="memory_game.js"></script>
 
 </body>
