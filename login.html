@@ -40,7 +40,7 @@
     <input id="name" type="text" name="fname" placeholder="שם משתמש" required>
     <br/>
     
-    <input id="password" type="password" name="password1" placeholder="סיסמא" required>
+    <input id="password" type="password" name="password" placeholder="סיסמא" required>
     <br/>
   
     <button  id="submit"  type="submit" onclick="check()">התחבר</button>
@@ -52,7 +52,7 @@
 
 <script>
     function check() {
-            let p= document.forms["myForm"]["password1"].value;
+            let p= document.forms["myForm"]["password"].value;
             console.log(p);
             let name = document.forms["myForm"]["fname"].value;
             
