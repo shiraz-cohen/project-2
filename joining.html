@@ -1,9 +1,7 @@
 <!DOCTYPE html>
+<!-- עמוד כניסת משתמש חדש. מכיל טופס "פורם" להכנסת פרטים-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
     <link rel="stylesheet" href="joining.css">
     <link rel="stylesheet" href="header_style.css">
 </head>
@@ -26,18 +24,13 @@
             <a href="mind.html" class="button">משחקי חשיבה</a>
             <a href="sport.html" class="button">משחקי ספורט</a>
             <a href="young.html" class="button">משחקים לצעירים</a>
-
         </nav>
     </header>
-
-
-
 
     <div class="Contact-Us">
         <h1>משתמש חדש</h1>
 
         <form class="Contact" name="myForm" method="post" action="home.html" autocomplete="on">
-
 
             <input id="name" type="text" name="fname" placeholder="שם מלא" required>
             <br />
@@ -51,7 +44,6 @@
             <br />
 
             <a href="login.html">יש לי חשבון,אני רוצה להתחבר</a>
-
         </form>
     </div>
 
@@ -85,13 +77,11 @@
                 u.userName = name;
                 u.password = p1;
                 localStorage.setItem(name, JSON.stringify(u));
-                logIn();
             } else {
                 alert("שגיאה באימות סיסמא ");
             }
         }
-        
+
     </script>
     <script src="header.js"></script>
-
 </body>

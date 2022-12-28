@@ -1,4 +1,6 @@
-p{
+/* עיצוב לגוף עמוד דף הבית */
+
+body p{
     position: absolute;
     margin-top: 250px;
     text-align: center;
@@ -9,6 +11,7 @@ p{
     font-size: 30px;
     font-style:inherit;
   }
+
 *{
   font-family:system-ui
 

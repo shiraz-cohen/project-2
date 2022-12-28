@@ -1,3 +1,7 @@
+/* קובץ ג'אוה סקריפט המקושר לכל העמודים */
+
+/* הפונקציה מופעלת בלחיצה על כפתור "התנתק" 
+-מחליפה את הכפתורים המוצגים ומוחקת את השם משתמש מהזיכרון */
 function logOut() {
     document.getElementById("logOut").className = "hide";
     document.getElementById("logIn1").className = "button_login";
@@ -5,6 +9,9 @@ function logOut() {
     localStorage.removeItem("userNow");
 }
 
+
+/* הפונקציה מופעלת בטעינת כל דף, ואם יש משתמש מחובר" 
+-מחליפה את הכפתורים המוצגים ומציגה את שם המשתמש על המסך */
 function logIn() {
     if (localStorage.getItem('userNow') != null) {
         document.getElementById("logOut").className = "button_logOut";

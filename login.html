@@ -1,9 +1,7 @@
 <!DOCTYPE html>
+<!-- עמוד כניסת משתמש קיים- מכיל טופס "פורם" להכנסת פרטים-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="header_style.css">
 </head>
@@ -18,7 +16,6 @@
             <a id="logOut" onclick="logOut()" href="home.html" class="hide">התנתק</a>
         </nav>
 
-
         <nav id="navigation">
             <a href="memory.html" class="button">משחקי זיכרון</a>
             <a href="speed.html" class="button">משחקי מהירות</a>
@@ -27,14 +24,8 @@
             <a href="mind.html" class="button">משחקי חשיבה</a>
             <a href="sport.html" class="button">משחקי ספורט</a>
             <a href="young.html" class="button">משחקים לצעירים</a>
-
         </nav>
     </header>
-
-
-
-
-
 
     <div class="Contact-Us">
         <h1>כניסת משתמש</h1>
@@ -57,7 +48,6 @@
     </div>
 
     <script>
-
         /*function sleep(ms) {
             return new Promise((resolve, reject) => {
                 setTimeout(resolve, ms);
@@ -69,7 +59,7 @@
         function check() {
             let p = document.forms["myForm"]["password"].value;
             let name = document.forms["myForm"]["fname"].value;
-            
+
             var user = JSON.parse(localStorage.getItem(name));
             if (user == null) {
                 alert("שם משתמש לא קיים במערכת.אנא הירשם");
@@ -89,9 +79,7 @@
                         sleep(1000);
                     }*/
             }
-            logIn();
         }
-
     </script>
     <script src="header.js"></script>
 
