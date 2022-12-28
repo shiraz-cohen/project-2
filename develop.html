@@ -21,11 +21,14 @@
     }
 </style>
 
-<body>
+<body onload="logIn()">
     <header>
+        <p id="user"></p>
+
         <nav id="navigation_login">
-            <a href="login.html" class="button_login">כניסת משתמשים</a>
-            <a href="joining.html" class="button_login">להצטרפות</a>
+            <a id="logIn1" href="login.html" class="button_login">כניסת משתמשים</a>
+            <a id="logIn2" href="joining.html" class="button_login">להצטרפות</a>
+            <a id="logOut" onclick="logOut()" href="home.html" class="hide">התנתק</a>
         </nav>
 
         <nav id="navigation">
