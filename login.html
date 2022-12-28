@@ -10,9 +10,12 @@
 
 <body>
     <header>
+        <p id="user">שלום</p>
+
         <nav id="navigation_login">
-            <a href="login.html" class="button_login">כניסת משתמשים</a>
-            <a href="joining.html" class="button_login">להצטרפות</a>
+            <a name="logIn" href="login.html" class="button_login">כניסת משתמשים</a>
+            <a name="logIn" href="joining.html" class="button_login">להצטרפות</a>
+            <a id="logOut" onclick="logOut()" href="home.html" class="hide">התנתק</a>
         </nav>
 
         <nav id="navigation">
@@ -85,8 +88,10 @@
                         sleep(1000);
                     }*/
             }
+            logIn();
         }
 
     </script>
+    <script src="header.js"></script>
 
 </body>

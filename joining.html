@@ -10,9 +10,12 @@
 
 <body>
     <header>
+        <p id="user">שלום</p>
+
         <nav id="navigation_login">
-            <a href="login.html" class="button_login">כניסת משתמשים</a>
-            <a href="joining.html" class="button_login">להצטרפות</a>
+            <a name="logIn" href="login.html" class="button_login">כניסת משתמשים</a>
+            <a name="logIn" href="joining.html" class="button_login">להצטרפות</a>
+            <a id="logOut" onclick="logOut()" href="home.html" class="hide">התנתק</a>
         </nav>
 
         <nav id="navigation">
@@ -46,7 +49,7 @@
 
             <button id="submit" type="submit" onclick="myFunction()">הרשמה</button>
             <br />
-            
+
             <a href="login.html">יש לי חשבון,אני רוצה להתחבר</a>
 
         </form>
@@ -82,12 +85,12 @@
                 u.userName = name;
                 u.password = p1;
                 localStorage.setItem(name, JSON.stringify(u));
-
+                logIn();
             } else {
                 alert("שגיאה באימות סיסמא ");
             }
         }
-
-
     </script>
+    <script src="header.js"></script>
+
 </body>

@@ -1,145 +1,151 @@
-*{
-  font-family:system-ui
-
- }
- body{
-    direction: rtl;
-    background-color:rgb(224, 245, 245);
-    position: static;
-  }
-
-  .hide{
-    visibility: hidden;
-  }
-  
-  .logo{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  
-    transition-timing-function: linear;
-    transition-duration: 0.4s;
-  }
-  
-  .logo:hover {
-    width: 250px;
-    height: 250px; 
-  }
-
-  header{
-    position: relative;
-  }
-
-  #navigation_login{
-    z-index: 2;
-    position: relative;
-    float: left; 
-    width: auto;
-    height: auto;
-    margin-top: 5px;
-    margin-left: 20px;
+* {
+  font-family: system-ui
 }
 
-header .button_login, .button_logOut{
-    width: 90px;
-    font-size: 13px;
-    font-family:Arial, sans-serif;
-    text-align:center;
-    padding:8px;
-    color:rgb(193, 226, 226);
-    background-color:rgb(45, 138, 125);
-    text-decoration:none;
-    display:block;
-    border: solid 2px rgb(193, 226, 226);
-    height: 20px;
-    border-radius: 6px;
-    transition-duration: 0.4s;
-  }
-
-  header .button_login:hover ,.button_logOut:hover {
-    font-style:inherit;
-    font-weight: 500;
-    font-size: 13.5px;
-    color: #000000;
-    background-color:rgb(54, 184, 166);
-    width: auto;
-  }
-
-  #navigation {
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    display: flex;
+body {
+  direction: rtl;
+  background-color: rgb(224, 245, 245);
+  position: static;
 }
 
-header .button{
-    flex: 1;
-    float:right;
-    font-size: 17px;
-    font-family:Arial, sans-serif;
-    text-align:center;
-    padding:10px;
-    color:rgb(193, 226, 226);
-    background-color:#E67473;
-    text-decoration:none;
-    display:block;
+.hide {
+  visibility: hidden;
+}
+
+.logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+  transition-timing-function: linear;
+  transition-duration: 0.4s;
+}
+
+.logo:hover {
+  width: 250px;
+  height: 250px;
+}
+
+header {
+  position: relative;
+}
+
+#navigation_login {
+  z-index: 2;
+  position: relative;
+  float: left;
+  width: auto;
+  height: auto;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+header .button_login,
+.button_logOut {
+  width: 90px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 8px;
+  color: rgb(193, 226, 226);
+  background-color: rgb(45, 138, 125);
+  text-decoration: none;
+  display: block;
+  border: solid 2px rgb(193, 226, 226);
+  height: 20px;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+}
+
+header .button_login:hover,
+.button_logOut:hover {
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 13.5px;
+  color: #000000;
+  background-color: rgb(54, 184, 166);
+  width: auto;
+}
+
+#navigation {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  display: flex;
+}
+
+header .button {
+  flex: 1;
+  float: right;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 10px;
+  color: rgb(193, 226, 226);
+  background-color: #E67473;
+  text-decoration: none;
+  display: block;
+  border: solid 2px rgb(193, 226, 226);
+  height: 20px;
+  margin: auto;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+}
+
+header .button:hover {
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 17.5px;
+  color: #000000;
+  width: 150px;
+}
+
+header #user {
+  margin-top: 10px;
+  font-size: 20px;
+  margin-right: 0;
+  float: right;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+  header h1 {
+    font-size: 1.5cm;
+    height: 150px;
+    line-height: 150px;
+  }
+
+  #navigation {
+    margin-bottom: 50px;
+    border: solid 3px rgb(193, 226, 226);
+  }
+
+  header .button {
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 1.05cm;
+    height: 120px;
+    line-height: 120px;
+  }
+
+  #navigation {
+    margin-bottom: 40px;
     border: solid 2px rgb(193, 226, 226);
-    height: 20px;
-    margin: auto;
-    border-radius: 6px;
-    transition-duration: 0.4s;
   }
 
-  header .button:hover {
-    font-style:inherit;
-    font-weight: 500;
-    font-size: 17.5px;
-    color: #000000;
-    width: 150px;
+  header .button {
+    font-size: 15px;
+    padding: 10px;
   }
-
-
-
-
-  
-  @media screen and (max-width: 1100px){
-    header h1{
-      font-size:1.5cm;
-      height: 150px;
-      line-height: 150px;
-  }
-  
-  #navigation {
-      margin-bottom: 50px;
-      border: solid 3px rgb(193, 226, 226);
-  }
-  
-  header .button{
-      font-size: 20px;
-      padding:15px;
-    }
-  }
-
-
-  
-  @media screen and (max-width: 600px){
-    header h1{
-      font-size:1.05cm;
-      height: 120px;
-      line-height: 120px;
-  }
-  
-  #navigation {
-      margin-bottom: 40px;
-      border: solid 2px rgb(193, 226, 226);
-  }
-  
-  header .button{
-      font-size: 15px;
-      padding:10px;
-    }
-  }
-
+}
