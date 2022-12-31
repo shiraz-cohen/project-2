@@ -18,6 +18,7 @@ var back16 = document.getElementById("back16");
 var back17 = document.getElementById("back17");
 var back18 = document.getElementById("back18");
 
+/* picLink הוספת אירוע "קליק" לכל תמונה (קלף) במשחק, שיפעיל את הפונקציה  */
 back1.addEventListener("click", picLink);
 back2.addEventListener("click", picLink);
 back3.addEventListener("click", picLink);
@@ -46,12 +47,20 @@ var pic_backId1 = this.attributes.id.value;
 var pic_back1 = document.getElementsByName(pic_backId1);
 var userName=localStorage.getItem("userName");
 
+
+/* פונקציית השהייה- תשמש אותנו להשהיית הקלפים פתוחים לפני סגירה*/
 function sleep(ms) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, ms);
     });
 }
 
+/* פונקציית משחק הזיכרון - 
+הפונקציה מופעלת ע"י אירוע קליק כשהמשתמש לוחץ על קלף. אם הקלף "סגור" הוא ייפתח.
+הפונקציה סופרת כמה קלפים פתח המשתמש, ושומרת את 2 הקלפים הראשונים בכל פעם. 
+אם התמונה שלהם זהה- המשתמש יקבל נקודה, והקלף כולל הרקע שלו יוסתר. (ע"י מחלקת הסתרה). לאחר מספר שניות.
+אם הם לא זהים- הקלפים ייסגרו לאחר מספר שניות.
+ */
 async function picLink() {
 
     var picId = this.attributes["data-img"].value;
@@ -89,7 +98,7 @@ async function picLink() {
 
                     var userNowname=localStorage.getItem("userNow");
                     var u = JSON.parse(localStorage.getItem(userNowname));
-                    u.memoryTime=time;
+                    u.memoryTime.push([time, score]);
                     u.memoryScore=score;
                     localStorage.setItem(userNowname, JSON.stringify(u));
                 }

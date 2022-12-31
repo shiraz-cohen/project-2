@@ -1,22 +1,10 @@
-<!-- העמוד מודיע שהמשחק לא פעיל-->
 <!DOCTYPE html>
+<!-- עמוד כניסת משתמש חדש. מכיל טופס "פורם" להכנסת פרטים-->
 
 <head>
+    <link rel="stylesheet" href="joining.css">
     <link rel="stylesheet" href="header_style.css">
 </head>
-<style>
-    h1{
-        margin: 280px 50px 0px 50px;
-        position: absolute;
-        text-align: center;
-        font-size: 60px;
-        left: 500px;
-        color: rgb(45, 138, 125);
-    }
-    .dev{
-        text-align: center;
-    }
-</style>
 
 <body onload="logIn()">
     <header>
@@ -39,8 +27,9 @@
         </nav>
     </header>
 
-    <div class="dev">
-        <h1>המשחק בפיתוח</h1>
+    <div id="userArea" class="game_cards">
+        <p id="end" class="hide">כל הכבוד!</p>
     </div>
-    <script src="header.js"></script>
+
 </body>
+

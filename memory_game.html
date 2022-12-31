@@ -1,3 +1,4 @@
+<!-- עמוד משחק זיכרון. מציג את התמונות של כל הקלפים, טיימר זמן וניקוד שהושג-->
 <!DOCTYPE html>
 
 <head>
@@ -25,71 +26,20 @@
                         <a href="young.html" class="button">משחקים לצעירים</a>
                 </nav>
         </header>
+
+        <!-- תצוגת הטיימר-->
         <div id="clock">
                 <input class="clockDesign" type="text" id="demo">
                 <button id="button_clock" onclick="stop_startCount()">השהה</button>
-                <p id="user">שלום</p>
         </div>
-
-        <script>
-
-                let sec = 0;
-                let min = 0;
-                let timeout;
-                let timer_on = 0;
-                function stop_startCount() {
-                        if (!timer_on) {
-                                timer_on = 1;
-                                document.getElementById("button_clock").innerHTML = "השהה";
-                                timedCount();
-                        }
-                        else {
-                                clearTimeout(timeout);
-                                timer_on = 0;
-                                document.getElementById("button_clock").innerHTML = "המשך";
-
-                                var userNowname = localStorage.getItem("userNow");
-                                var u = JSON.parse(localStorage.getItem(userNowname));
-                                u.memoryTime = timeout;
-                                localStorage.setItem(userNowname, JSON.stringify(u));
-                        }
-                }
-                function timedCount() {
-                        document.getElementById("demo").value = min + ":" + sec;
-                        sec++;
-                        if (sec > 59) {
-                                sec = sec - 60;
-                                min++;
-                        }
-                        if (sec < 10) {
-                                sec = "0" + sec;
-                        }
-                        timeout = setTimeout(timedCount, 1000);
-                        console.log(sec + "  " + timeout);
-                }
-
-                function startCount() {
-                        document.getElementById("user").innerHTML = " שלום " + localStorage.getItem("userNow");
-                        if (!timer_on) {
-                                timer_on = 1;
-                                timedCount();
-                        }
-                }
-
-                function stopCount() {
-                        clearTimeout(timeout);
-                        timer_on = 0;
-                        return timeout;
-                }
-        </script>
-
+        
+        <!-- תצוגת הניקוד-->
         <a id="score"><strong>הניקוד שצברת: 0</strong></a>
 
+        <!-- תצוגת הקלפים במשחק הזיכרון-->
         <div id="game_cards" class="game_cards">
-                <p id="end" class="hide">כל הכבוד!
-                        <br>
-                        הניקוד שצברת: 9 נקודות!
-                </p>
+                <p id="end" class="hide">כל הכבוד!</p>
+
                 <a data-img="back-pic1" id="back1" href="#body"><img name="back1" class="images_background"
                                 src="image/memory.jpg"></a>
                 <div class="div_img" id="div1"><img class="hide" id="back-pic1" src="image/fish2.jpg"></div>
@@ -163,6 +113,59 @@
                 <div class="div_img" id="div18"><img class="hide" id="back-pic18" src="image/chik.jpg"></div>
         </div>
 
+        <!-- פונקציות להפעלת והצגת הטיימר-->
+        <script>
+
+                let sec = 0;
+                let min = 0;
+                let timeout;
+                let timer_on = 0;
+
+                function stop_startCount() {
+                        if (!timer_on) {
+                                timer_on = 1;
+                                document.getElementById("button_clock").innerHTML = "השהה";
+                                timedCount();
+                        }
+                        else {
+                                clearTimeout(timeout);
+                                timer_on = 0;
+                                document.getElementById("button_clock").innerHTML = "המשך";
+
+                                var userNowname = localStorage.getItem("userNow");
+                                var u = JSON.parse(localStorage.getItem(userNowname));
+                                u.memoryTime.push(time);
+                                localStorage.setItem(userNowname, JSON.stringify(u));
+                        }
+                }
+
+                function timedCount() {
+                        document.getElementById("demo").value = min + ":" + sec;
+                        sec++;
+                        if (sec > 59) {
+                                sec = sec - 60;
+                                min++;
+                        }
+                        if (sec < 10) {
+                                sec = "0" + sec;
+                        }
+                        timeout = setTimeout(timedCount, 1000);
+                        console.log(sec + "  " + timeout);
+                }
+
+                function startCount() {
+                        if (!timer_on) {
+                                timer_on = 1;
+                                timedCount();
+                        }
+                }
+
+                function stopCount() {
+                        clearTimeout(timeout);
+                        timer_on = 0;
+                        return timeout;
+                }
+        </script>
         <script type="text/javascript" defer src="memory_game.js"></script>
         <script src="header.js"></script>
 
