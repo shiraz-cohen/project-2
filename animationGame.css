@@ -1,0 +1,57 @@
+ 
+.game_animate {
+    width: 1146px;
+    height: auto;
+    margin: 260px 90px 100px 90px;
+    position: absolute;
+    padding: 60px 30px 60px 30px;
+    border: 3px solid black;
+    border-radius: 4px;
+    align-items: center;
+  }
+
+#container {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    background: yellow;
+    margin: auto;
+  }
+
+  #startButton{
+    font-size: 17px;
+    text-align: center;
+    padding: 8px;
+    color: rgb(193, 226, 226);
+    background-color: rgb(45, 138, 125);
+    border: solid 2px rgb(193, 226, 226);
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    width: 160px;
+  }
+
+  #divButton{
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+    height: auto;
+    width: 160px;
+    border-radius: 6px;
+
+  }
+
+  #startButton:hover{
+    color: #000000;
+    background-color: rgb(54, 184, 166);
+  }
+
+  .hide{
+    visibility: hidden;
+  }
+  
+  .color{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color:blueviolet;
+  }

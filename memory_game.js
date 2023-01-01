@@ -45,7 +45,7 @@ var score = 0;
 var time;
 var pic_backId1 = this.attributes.id.value;
 var pic_back1 = document.getElementsByName(pic_backId1);
-var userName=localStorage.getItem("userName");
+var userName = localStorage.getItem("userName");
 
 
 /* פונקציית השהייה- תשמש אותנו להשהיית הקלפים פתוחים לפני סגירה*/
@@ -68,11 +68,11 @@ async function picLink() {
     var pic_backId = this.attributes.id.value;
     var pic_back = document.getElementsByName(pic_backId);
     document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
-/*
-    var userNowname=localStorage.getItem("userNow");
-    var u = JSON.parse(localStorage.getItem(userNowname));
-    u.memoryScore=score;
-    localStorage.setItem(userNowname, JSON.stringify(u)); */
+    /*
+        var userNowname=localStorage.getItem("userNow");
+        var u = JSON.parse(localStorage.getItem(userNowname));
+        u.memoryScore=score;
+        localStorage.setItem(userNowname, JSON.stringify(u)); */
 
     if (pic.className === "hide") {
         pic.className = "";
@@ -96,10 +96,10 @@ async function picLink() {
                     document.getElementById("end").className = "end_";
                     time = stopCount()
 
-                    var userNowname=localStorage.getItem("userNow");
+                    var userNowname = localStorage.getItem("userNow");
                     var u = JSON.parse(localStorage.getItem(userNowname));
                     u.memoryTime.push(time);
-                    u.memoryTime.sort(function(a, b){return a - b});
+                    u.memoryTime.sort(function (a, b) { return a - b });
                     /*u.memoryScore=score;*/
                     localStorage.setItem(userNowname, JSON.stringify(u));
                 }
@@ -119,5 +119,7 @@ async function picLink() {
         pic.className = "hide"
     }
 }
+
+
 
 

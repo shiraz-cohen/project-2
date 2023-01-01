@@ -14,6 +14,7 @@
             <a id="logIn1" href="login.html" class="button_login">כניסת משתמשים</a>
             <a id="logIn2" href="joining.html" class="button_login">להצטרפות</a>
             <a id="logOut" onclick="logOut()" href="home.html" class="hide">התנתק</a>
+            <a id="score" href="scoreUser.html" class="hide">טבלת שיאים</a>
         </nav>
 
         <nav id="navigation">
@@ -32,7 +33,7 @@
         <div class="game">
 
             <figure class="game-item">
-                <a  href="develop.html">
+                <a href="develop.html">
                     <img class="img" src="image/img-memory1.png" /></a>
             </figure>
 
@@ -42,27 +43,83 @@
             </figure>
 
             <figure class="game-item">
-                <a  href="develop.html">
+                <a href="develop.html">
                     <img class="img" src="image/img-memory3" /></a>
             </figure>
 
             <figure class="game-item">
-                <a  href="develop.html">
+                <a href="develop.html">
                     <img class="img" src="image/img-memory4" /></a>
             </figure>
 
             <figure class="game-item">
-                <a  href="develop.html">
+                <a href="develop.html">
                     <img class="img" src="image/img-memory5.jpg" /></a>
             </figure>
 
             <figure class="game-item">
-                <a  href="develop.html">
+                <a href="develop.html">
                     <img class="img" src="image/img-memory6.jpg.crdownload" /></a>
             </figure>
 
         </div>
     </div>
+
+    <script>
+        /* פונקציות להפעלת והצגת טיימר*/
+
+        let sec = 0;
+        let min = 0;
+        let timeout;
+        let timer_on = 0;
+
+        function stop_startCount() {
+            if (!timer_on) {
+                timer_on = 1;
+                document.getElementById("button_clock").innerHTML = "השהה";
+                timedCount();
+            }
+            else {
+                clearTimeout(timeout);
+                timer_on = 0;
+                document.getElementById("button_clock").innerHTML = "המשך";
+
+                /* var userNowname = localStorage.getItem("userNow");
+                 var u = JSON.parse(localStorage.getItem(userNowname));
+                 u.memoryTime.push(time);
+                 localStorage.setItem(userNowname, JSON.stringify(u)); */
+            }
+        }
+
+        function timedCount() {
+            document.getElementById("demo").value = min + ":" + sec;
+            sec++;
+            if (sec > 59) {
+                sec = sec - 60;
+                min++;
+            }
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+            timeout = setTimeout(timedCount, 1000);
+            console.log(sec + "  " + timeout);
+        }
+
+        function startCount() {
+            if (!timer_on) {
+                timer_on = 1;
+                timedCount();
+            }
+        }
+
+        function stopCount() {
+            clearTimeout(timeout);
+            timer_on = 0;
+            return timeout;
+        }
+    </script>
+
     <script src="header.js"></script>
+    <script src="memory_game.js"></script>
 
 </body>

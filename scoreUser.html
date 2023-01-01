@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="header_style.css">
 </head>
 
-<body onload="table1()">
+<body onload="memoryTables()">
     <header onload="logIn()">
         <p id="user"></p>
 
@@ -13,6 +13,7 @@
             <a id="logIn1" href="login.html" class="button_login">כניסת משתמשים</a>
             <a id="logIn2" href="joining.html" class="button_login">להצטרפות</a>
             <a id="logOut" onclick="logOut()" href="home.html" class="hide">התנתק</a>
+            <a id="score" href="scoreUser.html" class="hide">טבלת שיאים</a>
         </nav>
 
         <nav id="navigation">
@@ -27,55 +28,99 @@
     </header>
 
     <div id="div_score">
-        <table>
-            <thead>
-                <tr>
-                    <th>מקום</th>
-                    <th>שם משתמש </th>
-                    <th>השיא</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="num">1</td>
-                    <td id="userName1"></td>
-                    <td id="timeRecord1"></td>
-                </tr>
+        <div name="memoryRecords">
+            <h1>משחק הזיכרון</h1>
 
-                <tr>
-                    <td id="num">2</td>
-                    <td id="userName2"></td>
-                    <td id="timeRecord2"></td>
-                </tr>
+            <h2 id="userRecoedsTable">טבלת שיאים </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>מקום</th>
+                        <th>השיא</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="num">1</td>
+                        <td id="userTimeRecord1"></td>
+                    </tr>
 
-                <tr>
-                    <td id="num">3</td>
-                    <td id="userName3"></td>
-                    <td id="timeRecord3"></td>
-                </tr>
-            </tbody>
-        </table>
+                    <tr>
+                        <td id="num">2</td>
+                        <td id="userTimeRecord2"></td>
+                    </tr>
+
+                    <tr>
+                        <td id="num">3</td>
+                        <td id="userTimeRecord3"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>טבלת שיאים </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>מקום</th>
+                        <th>שם משתמש </th>
+                        <th>השיא</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="num">1</td>
+                        <td id="userName1"></td>
+                        <td id="timeRecord1"></td>
+                    </tr>
+
+                    <tr>
+                        <td id="num">2</td>
+                        <td id="userName2"></td>
+                        <td id="timeRecord2"></td>
+                    </tr>
+
+                    <tr>
+                        <td id="num">3</td>
+                        <td id="userName3"></td>
+                        <td id="timeRecord3"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
-        var array = {
-            name1: ""
-        };
+        var records = [];
+        var userNameKey;
+        var timeUser;
 
-        function table1() {
+        function memoryTables() {
+                        var nameNow=localStorage.getItem("userNow");
+            document.getElementById("userRecoedsTable").innerHTML = "טבלת השיאים של  " + nameNow;
+            document.getElementById("userTimeRecord1").innerHTML =JSON.parse(localStorage.getItem(nameNow)).memoryTime[0];
+            document.getElementById("userTimeRecord2").innerHTML =JSON.parse(localStorage.getItem(nameNow)).memoryTime[1];
+            document.getElementById("userTimeRecord3").innerHTML =JSON.parse(localStorage.getItem(nameNow)).memoryTime[2];
 
             for (i = 0; i < localStorage.length; i++) {
                 if (localStorage.key(i) != "userNow") {
-                    var userNameKey = localStorage.key(i);
-                    var timeUser = JSON.parse(localStorage.getItem(userNameKey)).memoryTime[0];
-                    array.userNameKey = timeUser;
+                    userNameKey = localStorage.key(i);
+                    timeUser = JSON.parse(localStorage.getItem(userNameKey)).memoryTime[0];
+                    if (timeUser != null) {
+                        records.push([userNameKey, timeUser]);
+                    }
                 }
             }
-            console.log(array);
+            records.sort(function (a, b) { return a[1] - b[1] });
+            console.log(records);
 
-            var userNowname = localStorage.getItem("userNow");
-            document.getElementById("userName1").innerHTML = userNowname;
+            document.getElementById("userName1").innerHTML = records[0][0];
+            document.getElementById("timeRecord1").innerHTML = records[0][1];
 
+            document.getElementById("userName2").innerHTML = records[1][0];
+            document.getElementById("timeRecord2").innerHTML = records[1][1];
+
+            document.getElementById("userName3").innerHTML = records[2][0];
+            document.getElementById("timeRecord3").innerHTML = records[2][1];
         }
 
     </script>

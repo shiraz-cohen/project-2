@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- עמוד כניסת משתמש קיים- מכיל טופס "פורם" להכנסת פרטים-->
+
 
 <head>
-    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="header_style.css">
+    <link rel="stylesheet" href="animationGame.css">
 </head>
 
 <body onload="logIn()">
@@ -28,27 +28,26 @@
         </nav>
     </header>
 
-    <div class="Contact-Us">
-        <h1>כניסת משתמש</h1>
+    <div class="game_animate">
+        <div id="divButton"><button id="startButton" onclick="myMove()">התחל משחק</button></div>
 
-        <form class="contact" name="myForm" method="post" autocomplete="on">
-
-            <input id="name" type="text" name="fname" placeholder="שם משתמש" required>
-            <br />
-
-            <input id="password" type="password" name="password" placeholder="סיסמא" required>
-            <br />
-
-            <button id="submit" type="submit" onclick="check()">התחבר</button>
-            <br />
-            <a href="joining.html">אין לי חשבון,אני רוצה להירשם</a>
-
-        </form>
-        <!---p id="p_pass">ttttt</p-->
-
+        <div id="container">
+            <div onclick="Click1()" id="animate1" class="hide"></div>
+            <div onclick="Click2()" id="animate2" class="hide"></div>
+            <div onclick="Click3()" id="animate3" class="hide"></div>
+            <div onclick="Click4()" id="animate4" class="hide"></div>
+            <div onclick="Click5()" id="animate5" class="hide"></div>
+            <div onclick="Click6()" id="animate6" class="hide"></div>
+            <div onclick="Click7()" id="animate7" class="hide"></div>
+            <div onclick="Click8()" id="animate8" class="hide"></div>
+            <div onclick="Click9()" id="animate9" class="hide"></div>
+            <div onclick="Click10()" id="animate10" class="hide"></div>
+        </div>
     </div>
 
     <script src="header.js"></script>
-    <script src="login.js"></script>
+    <script src="animationGame.js"></script>
 
 </body>
+
+</html>
