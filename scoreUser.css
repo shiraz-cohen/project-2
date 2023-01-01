@@ -1,0 +1,45 @@
+#div_score {
+    width: 1146px;
+    height: auto;
+    margin: 260px 90px 100px 90px;
+    position: absolute;
+    padding: 60px 30px 60px 30px;
+    border: 3px solid black;
+    border-radius: 4px;
+    align-items: center;
+}
+
+table {
+    padding: 20px 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+thead th {
+
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    background: #503306;
+    text-align: center;
+    background-color: #503306;
+    border-color: #503306;
+    color: #FFF;
+
+}
+
+tr {
+    background-color: #c4c4c4f6;
+    border-bottom: 1px solid #503306;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+th,
+td {
+    font-weight: 400;
+    padding: 20px;
+    text-align: center;
+    width: 33.3333%;
+    font-size: 18px
+}

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<!-- עמוד כניסת משתמש חדש. מכיל טופס "פורם" להכנסת פרטים-->
 
 <head>
-    <link rel="stylesheet" href="joining.css">
+    <link rel="stylesheet" href="scoreUser.css">
     <link rel="stylesheet" href="header_style.css">
 </head>
 
-<body onload="logIn()">
-    <header>
+<body onload="table1()">
+    <header onload="logIn()">
         <p id="user"></p>
 
         <nav id="navigation_login">
@@ -27,9 +26,61 @@
         </nav>
     </header>
 
-    <div id="userArea" class="game_cards">
-        <p id="end" class="hide">כל הכבוד!</p>
+    <div id="div_score">
+        <table>
+            <thead>
+                <tr>
+                    <th>מקום</th>
+                    <th>שם משתמש </th>
+                    <th>השיא</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="num">1</td>
+                    <td id="userName1"></td>
+                    <td id="timeRecord1"></td>
+                </tr>
+
+                <tr>
+                    <td id="num">2</td>
+                    <td id="userName2"></td>
+                    <td id="timeRecord2"></td>
+                </tr>
+
+                <tr>
+                    <td id="num">3</td>
+                    <td id="userName3"></td>
+                    <td id="timeRecord3"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-</body>
+    <script>
+        var array = {
+            name1: ""
+        };
 
+        function table1() {
+
+            for (i = 0; i < localStorage.length; i++) {
+                if (localStorage.key(i) != "userNow") {
+                    var userNameKey = localStorage.key(i);
+                    var timeUser = JSON.parse(localStorage.getItem(userNameKey)).memoryTime[0];
+                    array.userNameKey = timeUser;
+                }
+            }
+            console.log(array);
+
+            var userNowname = localStorage.getItem("userNow");
+            document.getElementById("userName1").innerHTML = userNowname;
+
+        }
+
+    </script>
+
+    <script src="header.js"></script>
+
+
+</body>
