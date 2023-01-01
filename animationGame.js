@@ -26,6 +26,7 @@ let id9;
 let id10;
 
 async function myMove() {
+    document.getElementById("divButton").className="hide";
     let _pos1 = 0;
     let _pos2 = 0;
     let _pos3 = 0;

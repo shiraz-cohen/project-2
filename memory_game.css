@@ -31,7 +31,7 @@ button{
   position:absolute;
   right: 100px;
 }
-#score {
+#gameScore {
   font-size: 25px;
   margin-top: 220px;
   left: 50px;

@@ -2,7 +2,7 @@
 var user = {
     userName: "",
     password: "",
-    memoryScore: 0,
+    animateScore: [],
     memoryTime: [],
 };
 

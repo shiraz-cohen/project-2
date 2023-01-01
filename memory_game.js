@@ -67,12 +67,7 @@ async function picLink() {
     var pic = document.getElementById(picId);
     var pic_backId = this.attributes.id.value;
     var pic_back = document.getElementsByName(pic_backId);
-    document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
-    /*
-        var userNowname=localStorage.getItem("userNow");
-        var u = JSON.parse(localStorage.getItem(userNowname));
-        u.memoryScore=score;
-        localStorage.setItem(userNowname, JSON.stringify(u)); */
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
 
     if (pic.className === "hide") {
         pic.className = "";
@@ -80,7 +75,6 @@ async function picLink() {
         if (count == 2) {
             pic1 = document.getElementById(picId1);
             pic_back1 = document.getElementsByName(pic_backId1);
-            console.log(pic_back1)
 
             if (pic1.src === pic.src) {
                 await sleep(650);
@@ -90,7 +84,9 @@ async function picLink() {
                 pic_back1[0].className = "hide_back";
                 count = 0;
                 score += 1;
-                document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
+
+                document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
+
                 if (score == 9) {
                     document.getElementById("game_cards").className = "end_game";
                     document.getElementById("end").className = "end_";
@@ -100,10 +96,10 @@ async function picLink() {
                     var u = JSON.parse(localStorage.getItem(userNowname));
                     u.memoryTime.push(time);
                     u.memoryTime.sort(function (a, b) { return a - b });
-                    /*u.memoryScore=score;*/
                     localStorage.setItem(userNowname, JSON.stringify(u));
                 }
-            } else {
+            } 
+            else {
                 await sleep(650);
                 pic.className = "hide";
                 pic1.className = "hide";

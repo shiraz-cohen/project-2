@@ -2,11 +2,9 @@
 .game_animate {
     width: 1146px;
     height: auto;
-    margin: 260px 90px 100px 90px;
+    margin: 230px 90px 100px 90px;
     position: absolute;
     padding: 60px 30px 60px 30px;
-    border: 3px solid black;
-    border-radius: 4px;
     align-items: center;
   }
 
@@ -14,8 +12,10 @@
     width: 1000px;
     height: 500px;
     position: relative;
-    background: yellow;
+    background: antiquewhite;
     margin: auto;
+    border: 3px solid black;
+    border-radius: 4px;
   }
 
   #startButton{
@@ -54,4 +54,43 @@
     height: 50px;
     position: absolute;
     background-color:blueviolet;
+    text-align: center;
+    color: antiquewhite;
+    font-size: 35px;
+  }
+
+  #animate2{
+    right: 120px;
+  }
+
+  #animate3{
+    right: 250px;
+  }
+
+  #animate4{
+    right: 750px;
+  }
+
+  #animate5{
+    right: 600px;
+  }
+
+  #animate6{
+    right: 350px;
+  }
+
+  #animate7{
+    right: 800px;
+  }
+
+  #animate8{
+    right: 700px;
+  }
+
+  #animate9{
+    right: 550px;
+  }
+  
+  #animate10{
+    right: 300px;
   }

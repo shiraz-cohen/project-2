@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="header_style.css">
 </head>
 
-<body onload="startCount()">
-        <header onload="logIn()">
+<body onload="startCount(), logIn()">
+        <header>
                 <p id="user"></p>
 
                 <nav id="navigation_login">
@@ -33,9 +33,9 @@
                 <input class="clockDesign" type="text" id="demo">
                 <button id="button_clock" onclick="stop_startCount()">השהה</button>
         </div>
-        
+
         <!-- תצוגת הניקוד-->
-        <a id="score"><strong>הניקוד שצברת: 0</strong></a>
+        <a id="gameScore"><strong>הניקוד שצברת: 0</strong></a>
 
         <!-- תצוגת הקלפים במשחק הזיכרון-->
         <div id="game_cards" class="game_cards">
@@ -114,9 +114,60 @@
                 <div class="div_img" id="div18"><img class="hide" id="back-pic18" src="image/chik.jpg"></div>
         </div>
 
- 
 
-        <script type="text/javascript" defer src="memory_game.js"></script>
+        <!-- פונקציות להפעלת והצגת הטיימר-->
+        <script>
+
+                let sec = 0;
+                let min = 0;
+                let timeout;
+                let timer_on = 0;
+
+                function stop_startCount() {
+                        if (!timer_on) {
+                                timer_on = 1;
+                                document.getElementById("button_clock").innerHTML = "השהה";
+                                timedCount();
+                        }
+                        else {
+                                clearTimeout(timeout);
+                                timer_on = 0;
+                                document.getElementById("button_clock").innerHTML = "המשך";
+
+                                /* var userNowname = localStorage.getItem("userNow");
+                                 var u = JSON.parse(localStorage.getItem(userNowname));
+                                 u.memoryTime.push(time);
+                                 localStorage.setItem(userNowname, JSON.stringify(u)); */
+                        }
+                }
+
+                function timedCount() {
+                        document.getElementById("demo").value = min + ":" + sec;
+                        sec++;
+                        if (sec > 59) {
+                                sec = sec - 60;
+                                min++;
+                        }
+                        if (sec < 10) {
+                                sec = "0" + sec;
+                        }
+                        timeout = setTimeout(timedCount, 1000);
+                }
+
+                function startCount() {
+                        if (!timer_on) {
+                                timer_on = 1;
+                                timedCount();
+                        }
+                }
+
+                function stopCount() {
+                        clearTimeout(timeout);
+                        timer_on = 0;
+                        return timeout;
+                }
+        </script>
+        <script src="memory_game.js"></script>
         <script src="header.js"></script>
 
 </body>
