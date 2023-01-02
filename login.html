@@ -31,7 +31,7 @@
     <div class="Contact-Us">
         <h1>כניסת משתמש</h1>
 
-        <form class="contact" name="myForm" action="home.html" method="post" autocomplete="on">
+        <form class="contact" name="myForm" action="home.html" onsubmit="return check()" method="post" autocomplete="on">
 
             <input id="name" type="text" name="fname" placeholder="שם משתמש" required>
             <br />
@@ -39,7 +39,7 @@
             <input id="password" type="password" name="password" placeholder="סיסמא" required>
             <br />
 
-            <button id="submit" type="submit" onclick="check()">התחבר</button>
+            <button id="submit" type="submit">התחבר</button>
             <br />
             <a href="joining.html">אין לי חשבון,אני רוצה להירשם</a>
 

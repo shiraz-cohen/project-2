@@ -1,6 +1,8 @@
 var records = [];
+var recordsAnimate=[];
 var userNameKey;
 var timeUser;
+var scoreUser;
 
 function memoryTables() {
     var nameNow = localStorage.getItem("userNow");
@@ -25,7 +27,6 @@ function memoryTables() {
         }
     }
     records.sort(function (a, b) { return a[1] - b[1] });
-    console.log(records);
 
     document.getElementById("userName1").innerHTML = records[0][0];
     document.getElementById("timeRecord1").innerHTML = records[0][1];
@@ -35,4 +36,37 @@ function memoryTables() {
 
     document.getElementById("userName3").innerHTML = records[2][0];
     document.getElementById("timeRecord3").innerHTML = records[2][1];
+
+/*--------------------------------------------------------------------- */
+    var _nameNow = localStorage.getItem("userNow");
+    document.getElementById("userRecoedsTable2").innerHTML = "טבלת השיאים של  " + _nameNow;
+    scoreUser= JSON.parse(localStorage.getItem(nameNow)).animateScore[0]
+    if ( scoreUser!= null)
+    document.getElementById("userScoreRecord1").innerHTML = scoreUser;
+    scoreUser= JSON.parse(localStorage.getItem(nameNow)).animateScore[1]
+    if ( scoreUser!= null)
+    document.getElementById("userScoreRecord2").innerHTML = scoreUser;
+    scoreUser= JSON.parse(localStorage.getItem(nameNow)).animateScore[2]
+    if ( scoreUser!= null)
+    document.getElementById("userScoreRecord3").innerHTML = scoreUser;
+ 
+    for (i = 0; i < localStorage.length; i++) {
+        if (localStorage.key(i) != "userNow") {
+            userNameKey = localStorage.key(i);
+            scoreUser = JSON.parse(localStorage.getItem(userNameKey)).animateScore[0];
+            if (scoreUser != null) {
+                recordsAnimate.push([userNameKey, scoreUser]);
+            }
+        }
+    }
+    recordsAnimate.sort(function (a, b) { return b[1] -a[1]});
+
+    document.getElementById("user_Name1").innerHTML = recordsAnimate[0][0];
+    document.getElementById("scoreRecord1").innerHTML = recordsAnimate[0][1];
+
+    document.getElementById("user_Name2").innerHTML = recordsAnimate[1][0];
+    document.getElementById("scoreRecord2").innerHTML = recordsAnimate[1][1];
+
+    document.getElementById("user_Name3").innerHTML = recordsAnimate[2][0];
+    document.getElementById("scoreRecord3").innerHTML = recordsAnimate[2][1];
 }

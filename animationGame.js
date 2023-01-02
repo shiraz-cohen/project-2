@@ -31,6 +31,7 @@ let id10;
 
 let level;
 let score = 0;
+let count = 0;
 
 async function myMove(i) {
     if (i === 20) {
@@ -39,12 +40,14 @@ async function myMove(i) {
     }else{
         level=2;
     }
-    score2 = 0;
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     document.getElementById("divButton").className = "hide";
     newG.className = "hide";
     nextG.className = "hide";
 
-    document.getElementById("succes").className = "hide"
+    document.getElementById("succes").className = "hide";
+    document.getElementById("gameOver").className = "hide";
+    document.getElementById("squares").className = "";
 
     let _pos1 = 0;
     let _pos2 = 0;
@@ -67,7 +70,6 @@ async function myMove(i) {
     let pos9 = 550;
     let pos10 = 300;
 
-    var count = 0;
 
     /*  clearInterval(id); */
     elem1.className = "color";
@@ -106,9 +108,11 @@ async function myMove(i) {
             clearInterval(id1);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                document.getElementById("container").innerHTML = "game over";
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos1++;
@@ -122,10 +126,11 @@ async function myMove(i) {
             clearInterval(id2);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                document.getElementById("container").innerHTML = "game over";
+                document.getElementById("squares").className = "hide";    
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
-
+                saveScore(score);
             }
         } else {
             _pos2++;
@@ -140,9 +145,11 @@ async function myMove(i) {
             clearInterval(id3);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*  document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos3++;
@@ -157,9 +164,11 @@ async function myMove(i) {
             clearInterval(id4);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*  document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos4++;
@@ -174,9 +183,11 @@ async function myMove(i) {
             clearInterval(id5);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*  document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos5++;
@@ -191,9 +202,11 @@ async function myMove(i) {
             clearInterval(id6);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*  document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos6++;
@@ -208,9 +221,11 @@ async function myMove(i) {
             clearInterval(id7);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*  document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos7++;
@@ -225,9 +240,11 @@ async function myMove(i) {
             clearInterval(id8);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*  document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos8++;
@@ -242,9 +259,11 @@ async function myMove(i) {
             clearInterval(id9);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*   document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos9++;
@@ -259,9 +278,11 @@ async function myMove(i) {
             clearInterval(id10);
             count += 1;
             if (count == 2) {
-                document.getElementById("container").className = "end_game";
-                /*  document.getElementById("container").innerHTML = "game over"; */
+                document.getElementById("squares").className = "hide";
+                document.getElementById("gameOver").innerHTML = "game over";
+                document.getElementById("gameOver").className = "end_game";
                 newG.className = "";
+                saveScore(score);
             }
         } else {
             _pos10++;
@@ -269,7 +290,6 @@ async function myMove(i) {
             elem10.style.right = pos10 + "px";
         }
     }
-
 }
 
 function Click1() {
@@ -277,6 +297,15 @@ function Click1() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id1);
+    if (level === 1 && score > 8 && count>0) {
+        finish(score);
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
+        finish(score);
+    }
 }
 
 function Click2() {
@@ -284,6 +313,15 @@ function Click2() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id2);
+    if (level === 1 && score > 8 && count>0) {
+        finish(score);
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
+        finish(score);
+    }
 }
 
 function Click3() {
@@ -291,6 +329,15 @@ function Click3() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id3);
+    if (level === 1 && score > 8 && count>0) {
+        finish(score);
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
+        finish(score);
+    }
 }
 
 function Click4() {
@@ -298,6 +345,15 @@ function Click4() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id4);
+    if (level === 1 && score > 8 && count>0) {
+        finish(score);
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
+        finish(score);
+    }
 }
 
 function Click5() {
@@ -305,6 +361,15 @@ function Click5() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id5);
+    if (level === 1 && score > 8 && count>0) {
+        finish(score);
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
+        finish(score);
+    }
 }
 
 function Click6() {
@@ -312,9 +377,13 @@ function Click6() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id6);
-    if (level === 1 && score > 8) {
+    if (level === 1 && score > 8 && count>0) {
         finish(score);
-    } else if (score > 18) {
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
         finish(score);
     }
 }
@@ -324,9 +393,13 @@ function Click7() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id7);
-    if (level === 1 && score > 8) {
+    if (level === 1 && score > 8 && count>0) {
         finish(score);
-    } else if (score > 18) {
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
         finish(score);
     }
 }
@@ -336,9 +409,13 @@ function Click8() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id8);
-    if (level === 1 && score > 8) {
+    if (level === 1 && score > 8 && count>0) {
         finish(score);
-    } else if (score > 18) {
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
         finish(score);
     }
 }
@@ -348,9 +425,13 @@ function Click9() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id9);
-    if (level === 1 && score > 8) {
+    if (level === 1 && score > 8 && count>0) {
         finish(score);
-    } else if (score > 18) {
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
         finish(score);
     }
 }
@@ -360,18 +441,31 @@ function Click10() {
     score += 1;
     document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id10);
-    if (level === 1 && score > 8) {
+    if (level === 1 && score > 8 && count>0) {
         finish(score);
-    } else if (score > 18) {
+    }else if(level === 1 && score > 9){
+        finish(score);
+    } else if (score > 18 && count>0) {
+        finish(score);
+    }else if( score > 19){
         finish(score);
     }
 }
 
 function finish(score) {
-    document.getElementById("container").className = "end_game";
+    document.getElementById("succes").className = "end_game";
     document.getElementById("succes").innerText = "כל הכבוד";
-    document.getElementById("succes").className = ""
     newG.className = "";
-    if(level===1)
+    if(level===1){
     nextG.className = "";
+    }
+    saveScore(score);
+}
+
+function saveScore(score){
+    var userNowname = localStorage.getItem("userNow");
+    var u = JSON.parse(localStorage.getItem(userNowname));
+    u.animateScore.push(score);
+    u.animateScore.sort(function (a, b) { return b-a });
+    localStorage.setItem(userNowname, JSON.stringify(u));
 }

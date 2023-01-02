@@ -26,11 +26,14 @@ function myFunction() {
             }
             else {
                 alert("שגיאה באימות סיסמא ");
+                return false;
             }
         } else {
             alert("סיסמא צריכה להיות באורך 6 תווים לפחות");
+            return false;
         }
     } else {
         alert("שם משתמש כבר קיים. בחר שם אחר");
+        return false;
     }
 }

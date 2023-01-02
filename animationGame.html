@@ -32,25 +32,27 @@
         <!-- תצוגת הניקוד-->
         <a id="gameScore"><strong>הניקוד שצברת: 0</strong></a>
 
-        <div id="div1Button" ><button id="gameOverButton" class="hide" onclick="myMove(20)">התחל משחק חדש</button></div>
-        <div id="div2Button" ><button id="endButton" class="hide" onclick="myMove(10)" >שלב הבא </button></div>
+        <div id="div1Button"><button id="gameOverButton" class="hide" onclick="myMove(20)">התחל משחק חדש</button></div>
+        <div id="div2Button"><button id="endButton" class="hide" onclick="myMove(10)">שלב הבא </button></div>
         <div id="divButton"><button id="startButton" onclick="myMove(20)">התחל משחק</button></div>
 
         <p id="text">האותיות בורחות, תפוס אותן לפני שיעלמו</p>
 
         <div id="container">
             <p id="succes"></p>
-            <div onclick="Click1()" id="animate1" class="hide">א</div>
-            <div onclick="Click2()" id="animate2" class="hide">ב</div>
-            <div onclick="Click3()" id="animate3" class="hide">ר</div>
-            <div onclick="Click4()" id="animate4" class="hide">ג</div>
-            <div onclick="Click5()" id="animate5" class="hide">ל</div>
-            <div onclick="Click6()" id="animate6" class="hide">כ</div>
-            <div onclick="Click7()" id="animate7" class="hide">ע</div>
-            <div onclick="Click8()" id="animate8" class="hide">ש</div>
-            <div onclick="Click9()" id="animate9" class="hide">ק</div>
-            <div onclick="Click10()" id="animate10" class="hide">פ</div>
-            
+            <p id="gameOver"></p>
+            <div id="squares">
+                <div onclick="Click1()" id="animate1" class="hide">א</div>
+                <div onclick="Click2()" id="animate2" class="hide">ב</div>
+                <div onclick="Click3()" id="animate3" class="hide">ר</div>
+                <div onclick="Click4()" id="animate4" class="hide">ג</div>
+                <div onclick="Click5()" id="animate5" class="hide">ל</div>
+                <div onclick="Click6()" id="animate6" class="hide">כ</div>
+                <div onclick="Click7()" id="animate7" class="hide">ע</div>
+                <div onclick="Click8()" id="animate8" class="hide">ש</div>
+                <div onclick="Click9()" id="animate9" class="hide">ק</div>
+                <div onclick="Click10()" id="animate10" class="hide">פ</div>
+            </div>
         </div>
     </div>
 

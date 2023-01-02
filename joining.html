@@ -31,7 +31,7 @@
     <div class="Contact-Us">
         <h1>משתמש חדש</h1>
 
-        <form class="Contact" name="myForm" method="post" action="home.html" autocomplete="on">
+        <form class="Contact" name="myForm" method="post" action="home.html" onsubmit="return myFunction();" autocomplete="on">
 
             <input id="name" type="text" name="fname" placeholder="שם מלא" required>
             <br />
@@ -41,7 +41,7 @@
             <input id="password2" type="password" name="password2" placeholder="אימות סיסמא" required>
             <br />
 
-            <button id="submit" type="submit" onclick="myFunction()">הרשמה</button>
+            <button id="submit" type="submit" >הרשמה</button>
             <br />
 
             <a href="login.html">יש לי חשבון,אני רוצה להתחבר</a>
