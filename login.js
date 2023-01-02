@@ -21,6 +21,9 @@ function check() {
             /*  let text="סיסמא שגויה. אנא נסה שוב";
                 document.getElementById("p_pass").innerHTML=text;*/
             count += 1;
+        }else{
+            localStorage.setItem("userNow", name);
+
         }
         /*
             if (count == 3) {
@@ -29,7 +32,7 @@ function check() {
                 sleep(1000);
             }*/
             
-        localStorage.setItem("userNow", name);
+        
 
     }
 }
