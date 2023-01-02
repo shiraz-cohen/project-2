@@ -12,23 +12,25 @@ function myFunction() {
     let name = document.forms["myForm"]["fname"].value;
 
     var _user = JSON.parse(localStorage.getItem(name));
-    if (_user != null) {
-        alert("שם משתמש כבר קיים. בחר שם אחר");
-    }
+    if (_user === null) {
+        if (p1.length >= 6 /*&& p1*/) {
+            if (p1 != "" && p2 != "" && p1 === p2) {
+                /* localStorage.clear();*/
+                localStorage.setItem("userNow", name);
 
-    if (p1.length < 6 /*&& p1*/) {
-        alert("סיסמא צריכה להיות באורך 6 תווים לפחות");
-    }
-    if (p1 != "" && p2 != "" && p1 === p2) {
-        /* localStorage.clear();*/
-        localStorage.setItem("userNow", name);
-
-        localStorage.setItem(name, JSON.stringify(user));
-        var u = JSON.parse(localStorage.getItem(name));
-        u.userName = name;
-        u.password = p1;
-        localStorage.setItem(name, JSON.stringify(u));
+                localStorage.setItem(name, JSON.stringify(user));
+                var u = JSON.parse(localStorage.getItem(name));
+                u.userName = name;
+                u.password = p1;
+                localStorage.setItem(name, JSON.stringify(u));
+            }
+            else {
+                alert("שגיאה באימות סיסמא ");
+            }
+        } else {
+            alert("סיסמא צריכה להיות באורך 6 תווים לפחות");
+        }
     } else {
-        alert("שגיאה באימות סיסמא ");
+        alert("שם משתמש כבר קיים. בחר שם אחר");
     }
 }
