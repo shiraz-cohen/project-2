@@ -2,7 +2,7 @@
 .game_animate {
     width: 1146px;
     height: auto;
-    margin: 230px 90px 100px 90px;
+    margin: 180px 90px 100px 90px;
     position: absolute;
     padding: 60px 30px 60px 30px;
     align-items: center;
@@ -32,12 +32,10 @@
 
   #divButton,#div1Button,#div2Button{
     margin: auto;
-    margin-bottom: 30px;
     position: relative;
     height: auto;
     width: 160px;
     border-radius: 6px;
-
   }
 
   #startButton:hover,#gameOverButton:hover,#endButton:hover{
@@ -53,26 +51,27 @@
     width: 1000px;
     height: 500px;
     margin: auto;
-    position: absolute;
-    padding: 60px 30px 60px 30px;
     border: 3px solid black;
     border-radius: 4px;
     align-items: center;
-    background-color: #bde7e3;
+    background-color: #206962;
     font-size: 200px;
     text-align: center;
   }
+
   #gameScore {
     font-size: 25px;
-    margin-top: 120px;
     left: 50px;
     float: left;
     font-weight: bold;
+    position: relative;
+
   }
   #text{
     font-size: 20px;
     text-align: center;
     font-weight: bold;
+    position: relative;
   }
   
   .color{
