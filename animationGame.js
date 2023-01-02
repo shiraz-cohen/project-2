@@ -14,6 +14,9 @@ const elem8 = document.getElementById("animate8");
 const elem9 = document.getElementById("animate9");
 const elem10 = document.getElementById("animate10");
 
+const newG = document.getElementById("div1Button");
+const nextG = document.getElementById("div2Button");
+
 let id1;
 let id2;
 let id3;
@@ -88,7 +91,10 @@ async function myMove() {
             clearInterval(id1);
             count+=1;
             if(count==2){
-                document.getElementById("score").innerHTML = "game over";
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+                
 
             }
         } else {
@@ -103,8 +109,10 @@ async function myMove() {
             clearInterval(id2);
             count+=1;
             if(count==2){
-                document.getElementById("score").innerHTML = "game over";
-
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+                
             }
         } else {
             _pos2++;
@@ -117,6 +125,12 @@ async function myMove() {
         if (_pos3 == 450) {
             elem3.className = "hide";
             clearInterval(id3);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos3++;
             elem3.style.top = _pos3 + "px";
@@ -128,6 +142,12 @@ async function myMove() {
         if (_pos4 == 450) {
             elem4.className = "hide";
             clearInterval(id4);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos4++;
             elem4.style.top = _pos4 + "px";
@@ -139,6 +159,12 @@ async function myMove() {
         if (_pos5 == 450) {
             elem5.className = "hide";
             clearInterval(id5);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos5++;
             elem5.style.top = _pos5 + "px";
@@ -150,6 +176,12 @@ async function myMove() {
         if (_pos6 == 450) {
             elem6.className = "hide";
             clearInterval(id6);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos6++;
             elem6.style.top = _pos6 + "px";
@@ -161,6 +193,12 @@ async function myMove() {
         if (_pos7 == 450) {
             elem7.className = "hide";
             clearInterval(id7);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos7++;
             elem7.style.top = _pos7 + "px";
@@ -172,6 +210,12 @@ async function myMove() {
         if (_pos8 == 450) {
             elem8.className = "hide";
             clearInterval(id8);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos8++;
             elem8.style.top = _pos8 + "px";
@@ -183,6 +227,12 @@ async function myMove() {
         if (_pos9 == 450) {
             elem9.className = "hide";
             clearInterval(id9);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos9++;
             elem9.style.top = _pos9 + "px";
@@ -194,6 +244,12 @@ async function myMove() {
         if (_pos10 == 450) {
             elem10.className = "hide";
             clearInterval(id10);
+            count+=1;
+            if(count==2){
+                document.getElementById("container").className = "end_game";
+                document.getElementById("container").innerHTML = "game over";
+                newG.className="";
+            }
         } else {
             _pos10++;
             elem10.style.top = _pos10 + "px";
@@ -208,76 +264,89 @@ var score = 0;
 function Click1() {
     elem1.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id1);
+    
 }
 
 function Click2() {
     elem2.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id2);
+    
 
 }
 function Click3() {
     elem3.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id3);
+    
 
 }
 function Click4() {
     elem4.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id4);
+    
 
 }
 function Click5() {
     elem5.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id5);
+    
 
 }
 function Click6() {
     elem6.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id6);
+    
 
 }
 function Click7() {
     elem7.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id7);
+    
 
 }
 function Click8() {
     elem8.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id8);
+    
 
 }
 function Click9() {
     elem9.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id9);
+    
 
 }
 function Click10() {
     elem10.className = "hide";
     score += 1;
-    console.log(score);
+    document.getElementById("gameScore").innerHTML = "הניקוד שצברת: " + score;
     clearInterval(id10);
+    finish(score);
 
 }
 
 function finish(score){
  if(score > 7){
-    document.getElementById("score").innerHTML = "הניקוד שצברת: " + score;
+    document.getElementById("container").className = "end_game";
+    document.getElementById("container").innerHTML = "כל הכבוד";
+    nextG.className="";
+    newG.className="";
  }
 }
