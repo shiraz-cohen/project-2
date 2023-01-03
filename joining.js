@@ -4,7 +4,10 @@ var user = {
     password: "",
     animateScore: [],
     memoryTime: [],
+    blocked: 0
 };
+
+/* פונקציית התחברות, מקבלת נתנוים מהפורם ועושה בדיקות תקינות לקלט*/
 
 function myFunction() {
     let p1 = document.forms["myForm"]["password1"].value;
@@ -13,9 +16,8 @@ function myFunction() {
 
     var _user = JSON.parse(localStorage.getItem(name));
     if (_user === null) {
-        if (p1.length >= 6 /*&& p1*/) {
+        if (p1.length >= 6) {
             if (p1 != "" && p2 != "" && p1 === p2) {
-                /* localStorage.clear();*/
                 localStorage.setItem("userNow", name);
 
                 localStorage.setItem(name, JSON.stringify(user));

@@ -34,6 +34,12 @@ let score = 0;
 let count = 0;
 
 async function myMove(i) {
+    if (localStorage.getItem('userNow') === null) {
+        document.getElementById("container").className = "hide";
+        document.getElementById("text").className = "hide";
+        alert("עליך להירשם כמשתמש כדי לשחק");
+    }
+
     if (i === 20) {
         score = 0;
         level=1;

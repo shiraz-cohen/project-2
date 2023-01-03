@@ -62,6 +62,11 @@ function sleep(ms) {
 אם הם לא זהים- הקלפים ייסגרו לאחר מספר שניות.
  */
 async function picLink() {
+    if (localStorage.getItem('userNow') === null) {
+        document.getElementById("game_cards").className = "hide";
+        document.getElementById("clock").className = "hide";
+        alert("עליך להירשם כמשתמש כדי לשחק");
+    }
 
     var picId = this.attributes["data-img"].value;
     var pic = document.getElementById(picId);
@@ -98,7 +103,7 @@ async function picLink() {
                     u.memoryTime.sort(function (a, b) { return a - b });
                     localStorage.setItem(userNowname, JSON.stringify(u));
                 }
-            } 
+            }
             else {
                 await sleep(650);
                 pic.className = "hide";

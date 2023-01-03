@@ -21,4 +21,5 @@ function logIn() {
         document.getElementById("logIn2").className = "hide";
         document.getElementById("user").innerHTML = " שלום " + localStorage.getItem("userNow");
     }
+    
 }

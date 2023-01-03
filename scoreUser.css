@@ -18,9 +18,11 @@
 #animateRecords {
     flex: 1;
     text-align: center;
-
 }
 
+h2{
+    color: rgb(45, 138, 125);
+}
 table {
     padding: 20px 20px;
     margin: 20px auto;
@@ -31,16 +33,15 @@ thead th {
     font-size: 16px;
     font-weight: 100;
     letter-spacing: 2px;
-    background: #503306;
     text-align: center;
-    background-color: #503306;
-    border-color: #503306;
+    background-color: rgb(25, 99, 89);
+    border-color: rgb(27, 117, 105);
     color: #FFF;
 }
 
 tr {
     background-color: #c4c4c4f6;
-    border-bottom: 1px solid #503306;
+    border-bottom: 1px solid rgb(25, 99, 89);
     margin-bottom: 5px;
     text-align: center;
 }
