@@ -9,6 +9,8 @@ function check() {
     let p = document.forms["myForm"]["password"].value;
     let name = document.forms["myForm"]["fname"].value;
     var user = JSON.parse(localStorage.getItem(name));
+
+    /* בדיקה אם משתמש חסום ואפשר לשחרר את החסימה*/
     if (user != null) {
         timeNow = new Date();
         stopBlocked = new Date(Date.parse(user.stopBlocked));
@@ -18,9 +20,8 @@ function check() {
         }
     }
 
-
     if (user == null) {
-        alert("שם משתמש לא קיים במערכת.אנא הירשם");
+        alert("שם משתמש לא קיים במערכת. אנא הירשם");
         return false;
     } else {
         if (user.blocked === 1) {
@@ -36,10 +37,8 @@ function check() {
                 user.stopBlocked = start;
                 console.log("user.stopBlocked   " + user.stopBlocked);
                 localStorage.setItem(user.userName, JSON.stringify(user));
-
                 count = 0;
                 alert("סיסמא שגויה אנא המתן 30 שניות");
-
                 return false;
             } else {
                 if (p != user.password) {

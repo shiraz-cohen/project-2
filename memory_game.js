@@ -62,6 +62,7 @@ function sleep(ms) {
 אם הם לא זהים- הקלפים ייסגרו לאחר מספר שניות.
  */
 async function picLink() {
+    /*בדיקה אם יש משתמש מחובר */
     if (localStorage.getItem('userNow') === null) {
         document.getElementById("game_cards").className = "hide";
         document.getElementById("clock").className = "hide";
